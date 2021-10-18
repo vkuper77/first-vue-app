@@ -8,13 +8,21 @@
   </head>
   <body>
 
-  <div class="container pt-5" id="app">
+  <div class="container" id="app">
     <div class="card">
-      <h1 >{{title}}: {{counter}}</h1>
-      <div>
-        <button class="btn primary" v-on:click="counter++">{{btn[0]}}</button>
-        <button class="btn danger" v-on:click="counter--">{{btn[1]}}</button>
+      <h1 >{{title}}</h1>
+      <div class="form-control">
+        <input
+                type="text"
+                v-bind:placeholder="placeholderString"
+                v-bind:value="inputValue"
+                v-on:input="inputChangeHandler"
+        />
       </div>
+      <h2>{{inputValue}}</h2>
+      <button class="btn">Добавить</button>
+      <hr/>
+
     </div>
   </div>
 

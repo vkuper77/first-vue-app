@@ -1,9 +1,14 @@
 const App = {
     data() {
         return {
-            counter: 0,
-            title: 'Счетчик',
-            btn: ['Добавить', 'Вычесть']
+            title: 'Список заметок',
+            placeholderString:'Введите название заметки',
+            inputValue: ''
+        }
+    },
+    methods: {
+        inputChangeHandler({target}){
+            this.inputValue = target.value
         }
     }
 }
