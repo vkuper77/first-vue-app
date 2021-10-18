@@ -1,7 +1,9 @@
 const App = {
     data() {
-        return{
-            counter: 0
+        return {
+            counter: 0,
+            title: 'Счетчик',
+            btn: ['Добавить', 'Вычесть']
         }
     }
 }
