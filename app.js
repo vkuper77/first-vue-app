@@ -25,6 +25,12 @@ const App = {
         removeNote(idx){
         this.notes.splice(idx, 1)
         }
+    },
+    computed: {
+        doubleCount(){
+            console.log('doubleCount')
+            return this.notes.length * 2
+        },
     }
 }
 
