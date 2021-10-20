@@ -15,9 +15,12 @@ const App = {
             if(this.inputValue){
                 this.notes.push(this.inputValue)
                 this.inputValue = ''
-            } else{
+            } else {
                 alert('Введите текст заметки!')
             }
+        },
+        toUpperCase(item){
+            return item.toUpperCase()
         },
         removeNote(idx){
         this.notes.splice(idx, 1)
