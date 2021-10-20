@@ -19,8 +19,8 @@ const App = {
                 alert('Введите текст заметки!')
             }
         },
-        clearNote(value){
-            this.notes = this.notes.filter((note)=> note !== value)
+        removeNote(idx){
+        this.notes.splice(idx, 1)
         }
     }
 }
