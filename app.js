@@ -28,9 +28,15 @@ const App = {
     },
     computed: {
         doubleCount(){
-            console.log('doubleCount')
             return this.notes.length * 2
         },
+    },
+    watch:{
+        inputValue(value){
+            if(value.length > 10){
+                this.inputValue = ''
+            }
+        }
     }
 }
 
