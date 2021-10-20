@@ -14,18 +14,18 @@
       <div class="form-control">
         <input
                 type="text"
-                v-bind:placeholder="placeholderString"
-                v-bind:value="inputValue"
-                v-on:input="inputChangeHandler"
-                v-on:keypress.enter="addNewNote"
+                :placeholder="placeholderString"
+                :value="inputValue"
+                @input="inputChangeHandler"
+                @keypress.enter="addNewNote"
         />
       </div>
-      <button class="btn" v-on:click="addNewNote">Добавить</button>
+      <button class="btn" @click="addNewNote">Добавить</button>
       <hr/>
       <ul class="list" v-if="notes.length">
         <li class="list-item" v-for="(myNote, idx) in notes">
           {{toUpperCase(myNote)}}
-          <button class="btn danger" v-on:click="removeNote(idx)">Удалить</button>
+          <button class="btn danger" @click="removeNote(idx)">Удалить</button>
         </li>
       </ul>
       <div v-else>Заметок пока нет. Добавьте первую</div>
