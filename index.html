@@ -1,58 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Basics</title>
-    <link rel="stylesheet" href="theme.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter</title>
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+<div class="container pt-5" id="app">
+  <div class="card center">
 
-  <div class="container" id="app">
-    <div class="card">
-      <h1 :style="{
-            color: inputValue.length < 5 ? 'darkred':'darkblue',
-            fontSize: inputValue.length<6?'2rem':'1.5rem'
-      }">{{title}}</h1>
-      <div class="form-control">
-        <input
-                type="text"
-                :placeholder="placeholderString"
-                v-model="inputValue"
-                @keypress.enter="addNewNote"
-        />
-      </div>
-      <button class="btn" @click="addNewNote">Добавить</button>
-      <hr/>
-      <ul class="list" v-if="notes.length">
-        <li class="list-item" v-for="(myNote, idx) in notes">
-
-<!--         <sapn :class="myNote.length > 5 ? 'primary' : 'bold' ">-->
-<!--           {{toUpperCase(myNote)}}-->
-<!--         </sapn>-->
-<!--          <sapn :class="{-->
-<!--              'primary': true,-->
-<!--              'bold': myNote.length > 5-->
-<!--          }">-->
-<!--            {{toUpperCase(myNote)}}-->
-<!--          </sapn>-->
-
-          <sapn :class="['bold', {'primary': myNote.length > 5}]">
-            {{toUpperCase(myNote)}}
-          </sapn>
-
-          <button class="btn danger" @click="removeNote(idx)">Удалить</button>
-        </li>
-        <hr/>
-        <li>
-          <strong>Общее количество: {{notes.length}}</strong> | <strong>{{doubleCount}}</strong>
-        </li>
-      </ul>
-      <div v-else>Заметок пока нет. Добавьте первую</div>
-    </div>
   </div>
+</div>
 
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="app.js"></script>
-  </body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+</body>
 </html>
