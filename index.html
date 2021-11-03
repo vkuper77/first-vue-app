@@ -22,14 +22,15 @@
         <!--            <button class="btn" @click="title = 'Теперь я другое название'">-->
         <!--                Изменить название-->
         <!--            </button>-->
-
         <ul class="list" v-if="items.length">
             <li
                     class="list-item"
                     v-for="(item, idx) in items"
                     @click="items.splice(idx, 1)"
+                    v-bind:key="item"
             >
-                <strong>{{item}}</strong>
+                <strong>{{item}}</strong>&nbsp;
+                <input type="text" @click.stop/>
             </li>
             <!--            <li class="list-item" v-for="(value, key) in person">-->
             <!--                {{key}}: {{value}}-->
