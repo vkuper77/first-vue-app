@@ -22,11 +22,16 @@
         <!--            <button class="btn" @click="title = 'Теперь я другое название'">-->
         <!--                Изменить название-->
         <!--            </button>-->
+
+        <div>
+            <input type="text" @keyup.enter="addItem" ref="myInput">
+        </div>
+
         <ul class="list" v-if="items.length">
             <li
                     class="list-item"
-                    v-for="(item, idx) in eventItems"
-                    @click="items.splice(idx, 1)"
+                    v-for="(item, idx) in items"
+                    @click="remove(idx), log(item)"
                     v-bind:key="item"
             >
                 <strong>{{item}}</strong>&nbsp;
